@@ -4,25 +4,44 @@
 
 using namespace std;
 
+typedef struct Fish {
+  char name[30];  // 이름
+  int age;        // 나이
+
+  int health;  // 체력
+  int food;    // 배부른 정도
+  int clean;   // 깨끗한 정도
+
+  // 여기까지는 Animal 과 동일하다.
+  int deep;  // 현재 깊이
+
+} Fish;
+
 
 class cStandard {
-    int num;
+    private:
+    int set_num;
 
- public:
-    cStandard();
+    public:
+    cStandard();                // 기본 생성자
     cStandard(int x);
+
     void Input(int* a_data, int num);
     void Input(int* a_data, int num, int limit);
+    int Count();
     void Output(int* a_data, int num);
-}
+    void swap(int *a, int *b);
+};
 
 cStandard::cStandard()
-    : num(10) {
+    : set_num(10) {
 }
 
 cStandard::cStandard(int x)
-    : num(x) {
+    : set_num(x) {
 }
+
+int cStandard::Count() { return set_num; }
 
 void cStandard::Input(int* a_data, int num) {
     int i;
@@ -65,11 +84,13 @@ void cStandard::swap(int *a, int *b) {
 }
 
 int main() {
-    cStandard cStandard();
+    cStandard cSt();
 
-    int *a_data = new int[cStandard.num];
+    int a = cSt.Count();
 
-    cStandard::Input(a_data, cStandard.num);
+    //int *a_data = new int[cSt.Count()];
+
+    //cSt::Input(a_data, cSt.Count());
 
 
 
